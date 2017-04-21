@@ -7,5 +7,8 @@
   <input type ="hidden" name="action" value="test_user"><br>
   <input type="submit" value="Login"/>
   </form>
+  <form action = 'register.php'>
+      <input type = 'submit' value = 'register' />
+  </form>
 </body>
 </html>
