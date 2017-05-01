@@ -16,9 +16,25 @@ if($action == "show_login_page")
   $suc = isUserValid($username,$password);
   if($suc == true)
   {
-    echo ' you are in right now!';    
+    $result = getTodoItems($_COOKIE['my_id']);
+    include('list.php');
+    //echo ' you are in right now!';    
   }else{
-    echo "wrong user name or password!";
+    header("Location: badinfo.php");
+    //echo "wrong user name or password!";
+  }else if($action == 'registar'){
+    $name = filter_input(INPUT_POST, 'reg_uname');
+    if(isset($name){
+      $pass = filter_input(INPUT_POST, 'reg_password');
+      $exit = creatUser($name,$pass);
+      if($exit == true){
+        include('user_exit.php');
+      }else{
+        header("Location: login.pjp");
+      }
+    }
+  }else if ($action == 'add'){
+  
   }
 }
 ?>
