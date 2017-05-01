@@ -14,17 +14,17 @@ if($action == "show_login_page")
   $username = $_POST['reg_uname'];
   $password = $_POST['reg_password'];
   $suc = isUserValid($username,$password);
-  if($suc == true)
-  {
-    $result = getTodoItems($_COOKIE['my_id']);
+  if($suc == true){
+      $result = getTodoItems($_COOKIE['my_id']);
     include('list.php');
     //echo ' you are in right now!';    
   }else{
-    header("Location: badinfo.php");
-    //echo "wrong user name or password!";
-  }else if($action == 'registar'){
+    //header("Location: badinfo.php");
+    echo "wrong user name or password!";
+  }
+}else if($action == 'registar'){
     $name = filter_input(INPUT_POST, 'reg_uname');
-    if(isset($name){
+    if(isset($name)){
       $pass = filter_input(INPUT_POST, 'reg_password');
       $exit = creatUser($name,$pass);
       if($exit == true){
@@ -33,8 +33,7 @@ if($action == "show_login_page")
         header("Location: login.pjp");
       }
     }
-  }else if ($action == 'add'){
+}else if ($action == 'add'){
   
-  }
 }
 ?>
