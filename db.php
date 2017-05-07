@@ -35,4 +35,17 @@ function isUserValid($user_email, $password)
      }
 }
 
+function addTodoItem($todo_text,$todo_description){
+  global $db;
+  $stmt = $db->query( "insert into todos set todo_item='".$_POST['todotitle']."',description='".$_POST['description']."',toda_userid='".$_SESSION['my_id']."'");
+  
+}
+
+function getTodoItems(){
+  global $db;
+ $query = $db->query("select * from todos where toda_userid='".$_SESSION['my_id']."'");
+   $result = $query->fetchAll();
+
+  return $result;
+}
 ?>
