@@ -15,7 +15,7 @@ if($action == "show_login_page")
   $password = $_POST['reg_password'];
   $suc = isUserValid($username,$password);
   if($suc == true){
-      $result = getTodoItems($_COOKIE['my_id']);
+    //$result = getTodoItems($_COOKIE['my_id']);
     include('list.php');
     //echo ' you are in right now!';    
   }else{
