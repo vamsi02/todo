@@ -48,4 +48,19 @@ function getTodoItems(){
 
   return $result;
 }
+
+function deleteTodoItem($user_id, $todo_id){
+  global $db;
+ 
+echo $user_id,$todo_id;
+$count = $db->exec("DELETE FROM todos WHERE id = '".$todo_id."'");
+ }
+ 
+ function updateTodoItem($user_id, $todo_id){
+  global $db;
+ 
+echo $user_id,$todo_id;
+$count = $db->exec("update todos set status=1 WHERE id = '".$todo_id."'");
+
+ }
 ?>
