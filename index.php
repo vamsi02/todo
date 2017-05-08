@@ -45,7 +45,7 @@ else if($action == 'registar'){
 		{
 		header ("location: user_exists.php");	
       }else{
-        header("Location: login.pjp");
+        header("Location: login.php");
       }
     }
 }
