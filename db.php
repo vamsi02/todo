@@ -37,7 +37,7 @@ function isUserValid($user_email, $password)
 
 function addTodoItem($todo_text,$todo_description){
   global $db;
-  $stmt = $db->query( "insert into todos set todo_item='".$_POST['todotitle']."',description='".$_POST['description']."',toda_userid='".$_SESSION['my_id']."'");
+  $stmt = $db->query( "insert into todos set todo_item='".$_POST['todotitle']."',description='".$_POST['description']."',stime='".addslashes($_POST['stime'])."',etime='".addslashes($_POST['etime'])."',toda_userid='".$_SESSION['my_id']."'");
   
 }
 
@@ -52,14 +52,14 @@ function getTodoItems(){
 function deleteTodoItem($user_id, $todo_id){
   global $db;
  
-echo $user_id,$todo_id;
+//echo $user_id,$todo_id;
 $count = $db->exec("DELETE FROM todos WHERE id = '".$todo_id."'");
  }
  
  function updateTodoItem($user_id, $todo_id){
   global $db;
  
-echo $user_id,$todo_id;
+//echo $user_id,$todo_id;
 $count = $db->exec("update todos set status=1 WHERE id = '".$todo_id."'");
 
  }
