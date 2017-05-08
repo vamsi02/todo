@@ -1,3 +1,4 @@
+<?php
 $dsn = 'mysql:host=sql1.njit.edu;dbname=vks35';
  $username='vks35';
  $password='gMHcf42Jf';
