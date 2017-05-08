@@ -8,7 +8,6 @@ setcookie('mylname', false);
 setcookie('mylname', false);
 setcookie('myemail', false);
 header("location:index.php");
-//return false;
 
 exit;
 ?>

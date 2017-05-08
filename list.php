@@ -31,8 +31,6 @@
 		<?php 
 		$i = 1;
 
-		 //print_r($result['id']);
-		//exit();
 		foreach($result as $res):?>
 			<tr>
             <td><?php echo $i;?></td>
@@ -47,6 +45,84 @@
 				  echo 'In progress';
               }
                ?></a>
+
+    |
+ 
+
+               
+	<a  href="javascript:;" onclick="deletemsg('<?php echo $res['id'];?>')" >Delete</a>
+<form   method='post' id="updatefrm_<?php echo $res['id'];?>" action='index.php'>
+	 
+	<input type='hidden' name='item_id' value='<?php echo $res['id'];?>'><br>
+	<input type='hidden' name='action' value='update'><br>
+	</form>       
+            
+ <form  method='post' id="deletefrm_<?php echo $res['id'];?>" action='index.php'>
+	 
+	<input type='hidden' name='item_id' value='<?php echo $res['id'];?>'><br>
+	<input type='hidden' name='action' value='delete'><br>
+	</form> </td>
+                  </tr>
+
+		<?php
+
+
+		$i++;
+		endforeach;
+        ?>
+        </tbody>
+      </table>
+    </div>
+
+
+<script type="text/javascript">
+	
+function deletemsg(str){
+
+var con =confirm("Are you sure want to delete?")
+
+if(con==true){
+
+	$("#deletefrm_"+str).submit();
+
+return true;
+}else{
+
+	return false;
+}
+
+}
+	
+function update(str){
+
+
+	$("#updatefrm_"+str).submit();
+
+
+}
+
+
+
+
+</script>
+	
+	<form method='post' action='index.php'>
+	<div class="form-group row">
+		<label for="example-text-input" class="col-md-3 col-form-label">To Do Title</label>
+		<div class="col-md-8">
+			<input class="form-control" type="text" name="todotitle" placeholder="Enter To Do Title" id="example-text-input">
+		</div>
+	</div>	
+	<div class="form-group row">
+		<label for="example-text-input" class="col-md-3 col-form-label">Description</label>
+		<div class="col-md-8">
+			<input class="form-control" type="text" name="description" placeholder="Enter Description" id="example-text-input">
+		</div>
+	</div>
+	
+	<input type='hidden' name='action' value='add'><br>
+	<input type="submit"  class="btn btn-primary" value="Add"/>
+	</form>
 </div>
 </div>
  </body>

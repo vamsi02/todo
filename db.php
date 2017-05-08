@@ -1,4 +1,4 @@
-<?php
+<?php session_start();
 
 function createUser($user_fname,$user_lname,$user_pnumber,$user_email, $reg_password,$gender)
 {
