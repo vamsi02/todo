@@ -53,7 +53,7 @@ else if($action == 'registrar'){
 	{
 		if (($_POST['todotitle'] and $_POST['description']))
 	  {
-		addTodoItem($_POST['todotitle'],$_POST['description']);
+		addTodoItem($_POST['todotitle'],$_POST['description'],$_POST['stime'],$_POST['etime']);
 	  }
 		$result = getTodoItems();
 		include('list.php');
