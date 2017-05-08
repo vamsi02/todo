@@ -9,7 +9,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
  </head>
 <body>
-	<<div class="container">&nbsp;</div>
+	<div class="container">&nbsp;</div>
 <div class="container">
 <div class="row">
 <form method="post" action="index.php" name="form1">

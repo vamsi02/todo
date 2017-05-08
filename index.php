@@ -4,7 +4,7 @@ require('db.php');
 $action = filter_input(INPUT_POST, "action");
 
 if($action == NULL) {
-  $action = "show_login_page";
+  $action ="show_login_page";
 }
 if($action == "show_login_page"){
   include('login.php');
@@ -29,7 +29,7 @@ if($username =="" || $password==""){
     echo "<script>window.location.href='badinfo.php'</script>";
   }
 }
-else if($action == 'registar'){
+else if($action == 'registrar'){
     $user_email = filter_input(INPUT_POST, 'reg_username');
 	
     if(isset($user_email))
@@ -45,7 +45,7 @@ else if($action == 'registar'){
 		{
 		header ("location: user_exists.php");	
       }else{
-        header("Location: login.php");
+        header("location: login.php");
       }
     }
 }
